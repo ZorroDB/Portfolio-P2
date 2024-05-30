@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+
+:root {
+  --background-color: rgb(6, 11, 25);
+  --secondary-color: rgba(34, 32, 93, 0.815);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  /* font-size: clamp(1.2rem, 3vw, 3rem); */
+}
+
+h1,
+h2,
+h3,
+a,
+p,
+span,
+i {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+nav > .nav-section {
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 1px solid var(--secondary-color);
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-logo-section {
+  justify-content: flex-start;
+}
+
+#nav-logo-section > a > i {
+  font-size: 2.5rem;
+}
+
+#nav-link-section {
+  gap: 2.5rem;
+}
+
+#nav-social-section {
+  gap: 3rem;
+}
+
+#nav-logo-section,
+#nav-link-section {
+  flex-basis: calc(100% / 3);
+}
+
+#nav-social-section,
+#nav-contact-section {
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  height: 100%;
+}
+
+article > .article-section {
+  height: 100%;
+}
+
+.article-description-section,
+.article-nav-section {
+  border-left: 1px solid var(--secondary-color);
+}
+
+.article-title-section,
+.article-nav-section {
+  border-top: 1px solid var(--secondary-color);
+}
+
+.article-nav-section {
+  display: flex;
+}
+
+#left-arrow {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  font-size: 5rem;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--secondary-color);
+  transition: ease-in-out 0.3s;
+}
+
+#right-arrow {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  font-size: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#left-arrow:hover i,
+#right-arrow:hover i {
+  animation: spin 0.7s ease;
+  animation-iteration-count: 1;
+}
+
+#left-arrow:hover,
+#right-arrow:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#nav-link-section > a,
+#nav-social-section > a > i {
+  transition: 0.4s ease-in-out;
+}
+#nav-social-section > a > i {
+  font-size: 1.5em;
+}
+
+#nav-link-section > a:hover,
+#nav-social-section > a > i:hover {
+  transform: scale(1.5);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Underline styles for nav-contact-section */
+#nav-contact-section > a {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Fade in */
+#nav-contact-section > a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: hotpink;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+#nav-contact-section > a:hover::after,
+#nav-contact-section > a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Scale from center */
+#nav-contact-section > a::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+#nav-contact-section > a:hover::after,
+#nav-contact-section > a:focus::after {
+  transform: scale(1);
+}
+
+/* Adding scale effect */
+#nav-contact-section > a:hover {
+  transform: scale(1.5);
+}
