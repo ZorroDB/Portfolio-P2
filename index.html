@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Article Navigator</title>
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
     <nav>
       <div id="nav-logo-section" class="nav-section">
-        <a href="#">
-          <i class="logo">DB</i>
-        </a>
+        <a href="#"><i class="logo">DB</i></a>
       </div>
       <div id="nav-link-section" class="nav-section">
         <a href="#">ABOUT ME</a>
@@ -21,12 +19,8 @@
         <a href="https://github.com/ZorroDB/" target="_blank">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="#">
-          <i class="fa-brands fa-x-twitter blocked"></i>
-        </a>
-        <a href="#">
-          <i class="fa-brands fa-instagram blocked"></i>
-        </a>
+        <a href="#"><i class="fa-brands fa-x-twitter blocked"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram blocked"></i></a>
       </div>
       <div id="nav-contact-section" class="nav-section">
         <a href="#">GET IN TOUCH</a>
@@ -34,27 +28,47 @@
     </nav>
 
     <main>
-      <article>
+      <article data-index="0" class="article active">
         <div class="article-image-section article-section"></div>
         <div class="article-description-section article-section"></div>
         <div class="article-title-section article-section"></div>
         <div class="article-nav-section article-section">
           <div id="left-arrow">
-            <i class="fa-solid fa-arrow-left"></i>
+            <button class="article-nav-button" type="button">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
           </div>
           <div id="right-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
+            <button class="article-nav-button" type="button">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </article>
-      <article></article>
-      <article></article>
-      <article></article>
+      <article data-index="1" class="article">
+        <div class="article-image-section article-section"></div>
+        <div class="article-description-section article-section"></div>
+        <div class="article-title-section article-section"></div>
+        <div class="article-nav-section article-section">
+          <div id="left-arrow">
+            <button class="article-nav-button" type="button">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+          </div>
+          <div id="right-arrow">
+            <button class="article-nav-button" type="button">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+      <!-- Add more articles as needed -->
     </main>
 
     <script
       src="https://kit.fontawesome.com/e039207eb6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>

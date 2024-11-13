@@ -10,13 +10,13 @@
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  /* font-size: clamp(1.2rem, 3vw, 3rem); */
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1,
@@ -26,7 +26,6 @@ a,
 p,
 span,
 i {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   color: white;
   text-decoration: none;
@@ -56,91 +55,68 @@ nav > .nav-section {
 }
 
 #nav-link-section {
+  display: flex;
   gap: 2.5rem;
 }
 
 #nav-social-section {
+  display: flex;
   gap: 3rem;
 }
 
 #nav-logo-section,
-#nav-link-section {
-  flex-basis: calc(100% / 3);
-}
-
+#nav-link-section,
 #nav-social-section,
 #nav-contact-section {
-  flex-grow: 1;
+  flex: 1;
 }
 
 main {
   flex-grow: 1;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 article {
-  display: grid;
+  display: none;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
-  height: 100%;
+  flex-grow: 1;
 }
 
-article > .article-section {
-  height: 100%;
+.article.active {
+  display: grid;
 }
 
-.article-description-section,
-.article-nav-section {
-  border-left: 1px solid var(--secondary-color);
+.article-section {
+  border: 1px solid var(--secondary-color);
 }
 
-.article-title-section,
-.article-nav-section {
-  border-top: 1px solid var(--secondary-color);
-}
-
-.article-nav-section {
+#left-arrow,
+#right-arrow {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
 }
 
 #left-arrow {
-  display: flex;
-  height: 100%;
-  width: 50%;
-  font-size: 5rem;
-  align-items: center;
-  justify-content: center;
   border-right: 1px solid var(--secondary-color);
-  transition: ease-in-out 0.3s;
 }
 
-#right-arrow {
-  display: flex;
-  height: 100%;
-  width: 50%;
-  font-size: 5rem;
-  align-items: center;
-  justify-content: center;
-}
-
-#left-arrow:hover i,
-#right-arrow:hover i {
+#right-arrow:hover i,
+#left-arrow:hover i {
   animation: spin 0.7s ease;
   animation-iteration-count: 1;
-}
-
-#left-arrow:hover,
-#right-arrow:hover {
-  cursor: pointer;
-  border: 1px solid white;
 }
 
 #nav-link-section > a,
 #nav-social-section > a > i {
   transition: 0.4s ease-in-out;
 }
+
 #nav-social-section > a > i {
   font-size: 1.5em;
 }
@@ -201,4 +177,11 @@ article > .article-section {
 /* Adding scale effect */
 #nav-contact-section > a:hover {
   transform: scale(1.5);
+}
+
+.article-image-section {
+  background-image: url('https://www.instant-quote.co/images/cars/large/o_1h0ihopdrdtkek61cnc140b1ldtif.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
